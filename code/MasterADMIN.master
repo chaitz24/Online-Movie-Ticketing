@@ -1,0 +1,183 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterADMIN.master.cs" Inherits="MasterADMIN" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<link rel="stylesheet" type="text/css" href="ddsmoothmenu.css" />
+<link rel="stylesheet" type="text/css" href="ddsmoothmenu-v.css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="ddsmoothmenu.js">
+
+    /***********************************************
+    * Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * This notice MUST stay intact for legal use
+    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+    ***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+    ddsmoothmenu.init({
+        mainmenuid: "smoothmenu1", //menu DIV id
+        orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+        classname: 'ddsmoothmenu', //class added to menu's outer DIV
+        //customtheme: ["#1c5a80", "#18374a"],
+        contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+    })
+
+    ddsmoothmenu.init({
+        mainmenuid: "smoothmenu2", //Menu DIV id
+        orientation: 'v', //Horizontal or vertical menu: Set to "h" or "v"
+        classname: 'ddsmoothmenu-v', //class added to menu's outer DIV
+        //customtheme: ["#804000", "#482400"],
+        contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+    })
+
+</script>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style2
+        {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .style6
+        {
+            width: 100%;
+        }
+        </style>
+</head>
+<body bgcolor="#000066"; onload="show5()">
+    <form id="form1" runat="server">
+    <div>
+    <span id="liveclock" style="position:absolute;left:1000px; top:10px;">
+</span>
+
+<script language="JavaScript">
+<!--
+
+    /*
+    Upper Left Corner Live Clock Script- © Dynamic Drive (www.dynamicdrive.com)
+    For full source code, 100's more DHTML scripts, and TOS,
+    visit http://www.dynamicdrive.com
+    */
+
+    function show5() {
+        if (!document.layers && !document.all && !document.getElementById)
+            return
+        var Digital = new Date()
+        var hours = Digital.getHours()
+        var minutes = Digital.getMinutes()
+        var seconds = Digital.getSeconds()
+        var dn = "AM"
+        if (hours > 12) {
+            dn = "PM"
+            hours = hours - 12
+        }
+        if (hours == 0)
+            hours = 12
+        if (minutes <= 9)
+            minutes = "0" + minutes
+        if (seconds <= 9)
+            seconds = "0" + seconds
+        //change font size here to your desire
+        myclock = "<font size='15' face='Arial' color='red' ><b><font size='5'>Current Time:</font></br>" + hours + ":" + minutes + ":"
+ + seconds + " " + dn + "</b></font>"
+        if (document.layers) {
+            document.layers.liveclock.document.write(myclock)
+            document.layers.liveclock.document.close()
+        }
+        else if (document.all)
+            liveclock.innerHTML = myclock
+        else if (document.getElementById)
+            document.getElementById("liveclock").innerHTML = myclock
+        setTimeout("show5()", 1000)
+    }
+
+//-->
+</script>
+    <table width : 1000px>
+     <table cellpadding="0" class="style2" style = "height:150px">
+        <tr>
+            <td style = "width:60%" valign="bottom">
+            <asp:Image ID="Image1" runat="server" BackColor="White" 
+                    Height="180px" ImageAlign="Bottom" ImageUrl="~/images/bookall1.jpg" 
+                    Width="500px" BorderStyle="Dashed" BorderColor="Blue" BorderWidth="10px"></asp:Image>
+                &nbsp;</td>
+            <td style = "width:40%">
+                <table class="style6">
+                    <tr>
+                        <td style= "height:170px" width="30%">
+                            &nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table style="width:100%">
+    <tr>
+    
+
+<div id="smoothmenu1" class="ddsmoothmenu">
+<ul>
+
+<li><a href="#">Home</a></li>
+<li><a href="#">...UPDATE...</a>
+<ul>
+    <li><a href="#">Movies</a></li>
+    <li><a href="#">Screens</a></li>
+    <li><a href="time.aspx">Time</a></li>
+    </ul>
+</li>
+<li><a href="#">...INSERT...</a>
+<ul>
+    <li><a href="insertmuvi.aspx">Movies</a></li>
+        <li><a href="insertcity.aspx">City</a></li>
+    </ul>
+</li>
+<li><a href="Deletemuvi.aspx">...DELETE...</a>
+<ul>
+    <li><a href="Deletemuvi.aspx">Movies</a></li>
+    <li><a href="Deletecity.aspx">City</a></li>
+    <li><a href="deleteticketclass.aspx">Tickets Class</a></li>
+    </ul>
+</li>
+
+ 
+</ul>
+<br style="clear: left" />
+</div>
+    </tr>
+    </table>
+    
+
+        <table cellpadding="0" class="style2">
+        <tr style="height:100px">
+        </tr>
+            <tr>
+                <td>
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">        
+        </asp:ContentPlaceHolder>
+                    &nbsp;</td>
+                    
+            </tr>
+        </table>
+        
+
+
+    </table>
+        
+    </div>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,341 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<link rel="stylesheet" type="text/css" href="ddsmoothmenu.css" />
+<link rel="stylesheet" type="text/css" href="ddsmoothmenu-v.css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="ddsmoothmenu.js">
+
+    /***********************************************
+    * Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * This notice MUST stay intact for legal use
+    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+    ***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+    ddsmoothmenu.init({
+        mainmenuid: "smoothmenu1", //menu DIV id
+        orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+        classname: 'ddsmoothmenu', //class added to menu's outer DIV
+        //customtheme: ["#1c5a80", "#18374a"],
+        contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+    })
+
+    ddsmoothmenu.init({
+        mainmenuid: "smoothmenu2", //Menu DIV id
+        orientation: 'v', //Horizontal or vertical menu: Set to "h" or "v"
+        classname: 'ddsmoothmenu-v', //class added to menu's outer DIV
+        //customtheme: ["#804000", "#482400"],
+        contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+    })
+
+</script>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style2
+        {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .style3
+        {
+            width: 100%;
+            background-color: #EBEBEB;
+        }
+        .style4
+        {
+            height: 19px;
+        }
+        .style5
+        {
+            height: 19px;
+            width: 478px;
+        }
+        .style6
+        {
+            width: 100%;
+        }
+        </style>
+</head>
+<body bgcolor="#000066"; onload="show5()">
+    <form id="form1" runat="server">
+    <div>
+    <span id="liveclock" style="position:absolute;left:1000px; top:10px;">
+</span>
+
+<script language="JavaScript">
+<!--
+
+    /*
+    Upper Left Corner Live Clock Script- © Dynamic Drive (www.dynamicdrive.com)
+    For full source code, 100's more DHTML scripts, and TOS,
+    visit http://www.dynamicdrive.com
+    */
+
+    function show5() {
+        if (!document.layers && !document.all && !document.getElementById)
+            return
+        var Digital = new Date()
+        var hours = Digital.getHours()
+        var minutes = Digital.getMinutes()
+        var seconds = Digital.getSeconds()
+        var dn = "AM"
+        if (hours > 12) {
+            dn = "PM"
+            hours = hours - 12
+        }
+        if (hours == 0)
+            hours = 12
+        if (minutes <= 9)
+            minutes = "0" + minutes
+        if (seconds <= 9)
+            seconds = "0" + seconds
+        //change font size here to your desire
+        myclock = "<font size='15' face='Arial' color='red' ><b><font size='5'>Current Time:</font></br>" + hours + ":" + minutes + ":"
+ + seconds + " " + dn + "</b></font>"
+        if (document.layers) {
+            document.layers.liveclock.document.write(myclock)
+            document.layers.liveclock.document.close()
+        }
+        else if (document.all)
+            liveclock.innerHTML = myclock
+        else if (document.getElementById)
+            document.getElementById("liveclock").innerHTML = myclock
+        setTimeout("show5()", 1000)
+    }
+
+//-->
+</script>
+    <table width : 1000px>
+     <table cellpadding="0" class="style2" style = "height:150px">
+        <tr>
+            <td style = "width:60%" valign="bottom">
+            <asp:Image ID="Image1" runat="server" BackColor="White" 
+                    Height="180px" ImageAlign="Bottom" ImageUrl="~/images/bookall1.jpg" 
+                    Width="100%" BorderStyle="Dashed" BorderColor="Blue" BorderWidth="10px"></asp:Image>
+                &nbsp;</td>
+            <td style = "width:40%">
+                <table class="style6">
+                    <tr>
+                        <td style= "height:170px" width="30%">
+                            &nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table style="width:100%">
+    <tr>
+    
+
+<div id="smoothmenu1" class="ddsmoothmenu">
+<ul>
+
+<li><a href="#">My Account</a>
+  <ul>
+  <li><a href="#">My Info</a></li>
+  <li><a href="#">History</a></li>
+  </ul>
+</li>
+<li><a href="login.aspx">Sign In</a>
+  </li>
+<li><a href="register.aspx">Register</a></li>
+<li><a href="#">###...BOOK ALL SHOWS...###</a>
+  <ul>
+  <li><a href="#">INSTANT BOOKING</a></li>
+  <li><a href="#">MOVIES</a>
+    <ul>
+    <li><a href="#">Now Showing</a></li>
+    <li><a href="#">Coming Soon</a></li>
+    <li><a href="#">Trailers</a></li>
+    </ul>
+  </li>
+  </ul>
+</li>
+<li><a href="#">Visa go.indulge</a>
+  <ul>
+    <li><a href="http://visa.bookmyshow.com/visa-red-carpet-nights.bms">Free Movie Screening</a></li>
+    <li><a href="http://visa.bookmyshow.com/super-smash-thailand-phuket/">Super Smash Thailand</a></li>
+    </ul>
+    </li>
+  <li>
+      <asp:LoginStatus ID="LoginStatus1" runat="server" />
+  </li>
+</ul>
+<br style="clear: left" />
+</div>
+    </tr>
+    </table>
+    
+
+        <table cellpadding="0" class="style2">
+            <tr>
+                <td style="width:65%; height: 430px;">
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">        
+        </asp:ContentPlaceHolder>
+                    &nbsp;</td>
+                    <td style="width:35%; height: 430px;">
+                    <script language="JavaScript1.2">
+
+
+
+var variableslide=new Array()
+
+//variableslide[x]=["path to image", "OPTIONAL link for image", "OPTIONAL text description (supports HTML tags)"]
+
+variableslide[0]=['images/smurfs.jpg', '', '']
+variableslide[1]=['images/murder.jpg', '', '']
+variableslide[2]=['images/zindagi.jpg', '', '']
+variableslide[3]=['images/harry.jpg','','']
+variableslide[4]=['images/bones.jpg','','']
+
+//configure the below 3 variables to set the dimension/background color of the slideshow
+
+var slidewidth='400px' //set to width of LARGEST image in your slideshow
+var slideheight='400px' //set to height of LARGEST iamge in your slideshow, plus any text description
+var slidebgcolor='blue'
+
+//configure the below variable to determine the delay between image rotations (in miliseconds)
+var slidedelay=3000
+
+////Do not edit pass this line////////////////
+
+var ie=document.all
+var dom=document.getElementById
+
+for (i=0;i<variableslide.length;i++){
+var cacheimage=new Image()
+cacheimage.src=variableslide[i][0]
+}
+
+var currentslide=0
+
+function rotateimages(){
+contentcontainer='<center>'
+if (variableslide[currentslide][1]!="")
+contentcontainer+='<a href="'+variableslide[currentslide][1]+'">'
+contentcontainer+='<img src="'+variableslide[currentslide][0]+'" border="0" vspace="3">'
+if (variableslide[currentslide][1]!="")
+contentcontainer+='</a>'
+contentcontainer+='</center>'
+if (variableslide[currentslide][2]!="")
+contentcontainer+=variableslide[currentslide][2]
+
+if (document.layers){
+crossrotateobj.document.write(contentcontainer)
+crossrotateobj.document.close()
+}
+else if (ie||dom)
+crossrotateobj.innerHTML=contentcontainer
+if (currentslide==variableslide.length-1) currentslide=0
+else currentslide++
+setTimeout("rotateimages()",slidedelay)
+}
+
+if (ie||dom)
+document.write('<div id="slidedom" style="width:'+slidewidth+';height:'+slideheight+'; background-color:'+slidebgcolor+'"></div>')
+
+function start_slider(){
+crossrotateobj=dom? document.getElementById("slidedom") : ie? document.all.slidedom : document.slidensmain.document.slidenssub
+if (document.layers)
+document.slidensmain.visibility="show"
+rotateimages()
+}
+
+if (ie||dom)
+start_slider()
+else if (document.layers)
+window.onload=start_slider
+
+</script>
+
+<ilayer id="slidensmain" width=&{slidewidth}; height=&{slideheight}; bgColor=&{slidebgcolor}; visibility=hide><layer id="slidenssub" width=&{slidewidth}; left=0 top=0></layer></ilayer>
+
+                    </td>
+            </tr>
+        </table>
+        
+
+
+        <table cellpadding="0" cellspacing="0" class="style3" align="left">
+            <tr>
+                <td class="style5" style="width:30%" bgcolor="Blue">
+                    &nbsp;<asp:Label ID="Label1" 
+                        runat="server" Text="BROWSE" BackColor="Blue" Font-Bold="True" 
+                        Font-Italic="True" Font-Size="Large" Font-Underline="True" 
+                        ForeColor="Lime"></asp:Label>
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="True" 
+                        Font-Italic="True" Font-Size="Large" Font-Underline="True" ForeColor="White">Muvies Now Showing</asp:HyperLink>
+
+                    <br />
+
+                    <br />
+                    <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True" 
+                        Font-Italic="True" Font-Overline="False" Font-Size="Large" 
+                        Font-Underline="True" ForeColor="White">Muvies Coming Soon</asp:HyperLink>
+
+                    <br />
+
+                    <br />
+                    <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="True" 
+                        Font-Italic="True" Font-Size="Large" Font-Underline="True" ForeColor="White">Cinemas</asp:HyperLink>
+
+                    <br />
+
+                    <br />
+                    <asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="True" 
+                        Font-Italic="True" Font-Size="Large" Font-Underline="True" ForeColor="White">Regions</asp:HyperLink>
+
+                </td>
+                <td class="style4" style="width:30%" bgcolor="Blue">
+                    <asp:Label ID="Label2" runat="server" Text="TRAILERS" BackColor="Blue" Font-Bold="True" 
+                        Font-Italic="True" Font-Size="Medium" Font-Underline="True" 
+                        ForeColor="Lime"></asp:Label>
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink7" runat="server" Font-Bold="True" 
+                        Font-Italic="True" Font-Size="Large" Font-Underline="True" ForeColor="White">Now Showing Trailers</asp:HyperLink>
+
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink8" runat="server" Font-Bold="True" 
+                        Font-Italic="True" Font-Size="Large" Font-Underline="True" ForeColor="White">Coming Soon Trailers</asp:HyperLink>
+
+                    <br />
+                </td style="width:20%">
+                <td class="style4" bgcolor="Blue" colspan="1" dir="ltr">
+                <asp:ImageButton ID="ImageButton2" runat="server" AlternateText="FACEBOOK" 
+                        BorderStyle="Dotted" ImageUrl="~/images/fb.JPG" 
+                        PostBackUrl="http://www.facebook.com/BookMyShowIN"></asp:ImageButton>
+                    &nbsp;</td>
+                <td class="style4" style="width:20%" bgcolor="Blue">
+                    <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="TWITTER" 
+                        BorderStyle="Dotted" ImageUrl="~/images/twitter.JPG" 
+                        PostBackUrl="http://www.twitter.com/BookMyShow" />
+                </td>
+            </tr>
+        </table>
+
+
+    </table>
+        
+    </div>
+    </form>
+    
+</body>
+</html>
